@@ -1,7 +1,7 @@
 {
   "name": "coinroller",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "scripts": {
     "dev-full": "concurrently \"next dev\" \"storybook dev -p 6006\" \"prisma studio\"",
