@@ -1,9 +1,9 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
 import { Item, ItemIndicator, ItemText } from '@radix-ui/react-select'
 import { Check } from 'lucide-react'
 
-import { Text, TextProps } from 'shared/ui/Text'
+import { Text, type TextProps } from 'shared/ui/Text'
 import { cn } from 'shared/utils/cn'
 
 type SelectItemProps = {

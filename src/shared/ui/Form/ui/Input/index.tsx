@@ -1,10 +1,8 @@
 'use client'
 
-import React from 'react'
-
 import { useFormContext } from 'react-hook-form'
 
-import { Input as ClearInput, InputProps } from 'shared/ui/Input'
+import { Input as ClearInput, type InputProps } from 'shared/ui/Input'
 
 export const Input = (props: InputProps) => {
     const name = props.inputFieldProps.name

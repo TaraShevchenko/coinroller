@@ -1,6 +1,6 @@
 'use client'
 
-import React, { type HTMLInputTypeAttribute, forwardRef, useMemo, useState } from 'react'
+import { type HTMLInputTypeAttribute, type InputHTMLAttributes, forwardRef, useMemo, useState } from 'react'
 
 import { type VariantProps } from 'class-variance-authority'
 
@@ -17,7 +17,7 @@ export type CheckboxProps = {
     buttonClassName?: string
     labelClassName?: string
 } & VariantProps<typeof switchVariants> &
-    React.InputHTMLAttributes<HTMLInputElement>
+    InputHTMLAttributes<HTMLInputElement>
 
 export const Switch = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
     const {

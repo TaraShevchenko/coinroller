@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { faker } from '@faker-js/faker'
 import { PrismaClient } from '@prisma/client'
 
@@ -8,6 +7,7 @@ import { Currency, Source } from 'shared/types/enums'
 
 const prisma = new PrismaClient()
 
+//TODO: move in utility to use for all package.json scripts
 function parseArgs() {
     const args = process.argv.slice(2)
     const params: Record<string, string | number> = {}
@@ -58,6 +58,8 @@ seedingBillingAccounts()
         console.error(e)
         process.exit(1)
     })
-    .finally(async () => {
-        await prisma.$disconnect()
+    .finally(() => {
+        prisma.$disconnect().catch((error) => {
+            console.error('Prisma disconnect error!', error)
+        })
     })

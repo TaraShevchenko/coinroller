@@ -1,15 +1,15 @@
 'use client'
 
-import * as React from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import * as RadixDropdownComponents from '@radix-ui/react-dropdown-menu'
 
 import { cn } from 'shared/utils/cn'
 
-export const DropdownMenuSeparator = React.forwardRef<
-    React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
-    React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+export const DropdownMenuSeparator = forwardRef<
+    ElementRef<typeof RadixDropdownComponents.Separator>,
+    ComponentPropsWithoutRef<typeof RadixDropdownComponents.Separator>
 >(({ className, ...props }, ref) => (
-    <DropdownMenuPrimitive.Separator ref={ref} className={cn('-mx-1 my-1 h-px bg-muted', className)} {...props} />
+    <RadixDropdownComponents.Separator ref={ref} className={cn('-mx-1 my-1 h-px bg-muted', className)} {...props} />
 ))
-DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
+DropdownMenuSeparator.displayName = RadixDropdownComponents.Separator.displayName

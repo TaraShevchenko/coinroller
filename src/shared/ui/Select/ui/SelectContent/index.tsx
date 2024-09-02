@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
 import { Content, Portal, SelectScrollDownButton, SelectScrollUpButton, Viewport } from '@radix-ui/react-select'
 

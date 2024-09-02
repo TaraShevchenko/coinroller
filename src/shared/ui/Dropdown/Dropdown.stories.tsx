@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import type { Meta, StoryObj } from '@storybook/react'
 import {
     Cloud,
@@ -17,7 +15,7 @@ import {
 } from 'lucide-react'
 
 import 'shared/styles/globals.css'
-import { ScrollArea } from 'shared/ui/ScrollArea'
+import { Scroll } from 'shared/ui/ScrollArea'
 
 import { DropdownMenu, DropdownMenuPortal, DropdownMenuSub } from './index'
 import { DropdownMenuCheckboxItem } from './ui/DropdownMenuCheckboxItem'
@@ -47,7 +45,7 @@ export const Default: Story = {
             <DropdownMenuTrigger text={'Dropdown'} />
             <DropdownMenuContent>
                 {/*TODO: integrate scrollArea and use only when really need, condition and lazy load */}
-                <ScrollArea className="max-h-[500px] w-56 pr-1.5">
+                <Scroll className="max-h-[500px] w-56 pr-1.5">
                     <DropdownMenuLabel text={'Displayed column(s)'} />
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
@@ -99,7 +97,7 @@ export const Default: Story = {
                     <DropdownMenuGroup>
                         <DropdownMenuItem icon={LogOut} text={'Log out'} shortcut={'⇧⌘Q'} />
                     </DropdownMenuGroup>
-                </ScrollArea>
+                </Scroll>
             </DropdownMenuContent>
         </DropdownMenu>
     ),

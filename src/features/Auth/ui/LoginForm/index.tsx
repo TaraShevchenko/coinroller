@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Anchor, Button } from 'shared/ui/Button'
 import { CardContent, CardFooter } from 'shared/ui/Card'
 import { Input } from 'shared/ui/Input'

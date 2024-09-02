@@ -27,6 +27,6 @@ export const ErrorResponseScheme = z.object({
     }),
 })
 
-export type Child = {
+export type Children = {
     children: ReactNode
 }

@@ -1,4 +1,4 @@
-import { type AnchorHTMLAttributes, type ButtonHTMLAttributes, type FC } from 'react'
+import { type AnchorHTMLAttributes, type ButtonHTMLAttributes } from 'react'
 
 import { type LinkProps } from 'next/link'
 

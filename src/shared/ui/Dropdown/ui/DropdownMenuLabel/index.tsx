@@ -1,28 +1,29 @@
 'use client'
 
-import * as React from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { LucideIcon } from 'lucide-react'
+import * as RadixDropdownComponents from '@radix-ui/react-dropdown-menu'
+import { type LucideIcon } from 'lucide-react'
 
-import { Text, TextProps } from 'shared/ui/Text'
+import { Text, type TextProps } from 'shared/ui/Text'
 import { cn } from 'shared/utils/cn'
 
-export const DropdownMenuLabel = React.forwardRef<
-    React.ElementRef<typeof DropdownMenuPrimitive.Label>,
-    Omit<React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label>, 'children'> & {
+// TODO Add icon to a component in props it already exists
+export const DropdownMenuLabel = forwardRef<
+    ElementRef<typeof RadixDropdownComponents.Label>,
+    Omit<ComponentPropsWithoutRef<typeof RadixDropdownComponents.Label>, 'children'> & {
         text: string
         icon?: LucideIcon
         inset?: boolean
         textProps?: Omit<TextProps, 'text'>
     }
 >(({ className, inset, icon: Icon, text, textProps, ...props }, ref) => (
-    <DropdownMenuPrimitive.Label
+    <RadixDropdownComponents.Label
         ref={ref}
         className={cn('px-2.5 py-1.5 text-sm font-semibold', inset && 'pl-8', className)}
         {...props}
     >
         <Text text={text} variant={'bold'} {...textProps} />
-    </DropdownMenuPrimitive.Label>
+    </RadixDropdownComponents.Label>
 ))
-DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName
+DropdownMenuLabel.displayName = RadixDropdownComponents.Label.displayName

@@ -1,16 +1,16 @@
 'use client'
 
-import * as React from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { LucideIcon } from 'lucide-react'
+import * as RadixDropdownComponents from '@radix-ui/react-dropdown-menu'
+import { type LucideIcon } from 'lucide-react'
 
-import { Text, TextProps } from 'shared/ui/Text'
+import { Text, type TextProps } from 'shared/ui/Text'
 import { cn } from 'shared/utils/cn'
 
-export const DropdownMenuItem = React.forwardRef<
-    React.ElementRef<typeof DropdownMenuPrimitive.Item>,
-    Omit<React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item>, 'children'> & {
+export const DropdownMenuItem = forwardRef<
+    ElementRef<typeof RadixDropdownComponents.Item>,
+    Omit<ComponentPropsWithoutRef<typeof RadixDropdownComponents.Item>, 'children'> & {
         inset?: boolean
         icon?: LucideIcon
         text: string
@@ -19,7 +19,7 @@ export const DropdownMenuItem = React.forwardRef<
         shortcutProps?: Omit<TextProps, 'text'>
     }
 >(({ className, inset, icon: Icon, text, textProps, shortcut, shortcutProps, ...props }, ref) => (
-    <DropdownMenuPrimitive.Item
+    <RadixDropdownComponents.Item
         ref={ref}
         className={cn(
             'relative flex cursor-default select-none items-center gap-2 rounded-sm px-2.5 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
@@ -38,6 +38,6 @@ export const DropdownMenuItem = React.forwardRef<
                 {...textProps}
             />
         )}
-    </DropdownMenuPrimitive.Item>
+    </RadixDropdownComponents.Item>
 ))
-DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
+DropdownMenuItem.displayName = RadixDropdownComponents.Item.displayName

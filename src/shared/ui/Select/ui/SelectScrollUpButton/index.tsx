@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
 import { ScrollUpButton } from '@radix-ui/react-select'
 import { ChevronUp } from 'lucide-react'

@@ -1,8 +1,8 @@
 'use client'
 
-import React, { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
-import { FieldValues, FormProvider, UseFormReturn } from 'react-hook-form'
+import { type FieldValues, FormProvider, type UseFormReturn } from 'react-hook-form'
 
 export type FormProps<T extends FieldValues> = {
     className?: string

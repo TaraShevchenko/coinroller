@@ -64,13 +64,14 @@ export const accountRouter = createTRPCRouter({
                 },
             },
         }
-
-        await sleep(2000)
+        // TODO: Delete sleep
+        // await sleep(2000)
 
         return result
     }),
-    addAccount: protectedProcedure.input(NewAccountScheme).mutation(async ({ ctx, input }) => {
-        return await ctx.db.billingAccount.create({
+
+    addAccount: protectedProcedure.input(NewAccountScheme).mutation(({ ctx, input }) => {
+        return ctx.db.billingAccount.create({
             data: {
                 ...input,
                 createdById: ctx.session.user.id,

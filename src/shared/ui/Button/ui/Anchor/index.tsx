@@ -5,11 +5,11 @@ import Link from 'next/link'
 import { cn } from 'shared/utils/cn'
 
 import { buttonVariants } from '../../model/config'
-import { AnchorProps } from '../../model/types'
+import { type AnchorProps } from '../../model/types'
 import { ButtonContent } from '../ButtonContent'
 
 export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
-    ({ variant, size, className, isActive, text, icon, textProps, ...otherProps }, ref) => {
+    ({ variant, size, className, isActive, text, textProps, icon, iconProps, ...otherProps }, ref) => {
         const activeByVariant = isActive ? variant : undefined
         return (
             <Link
@@ -17,7 +17,14 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
                 ref={ref}
                 {...otherProps}
             >
-                <ButtonContent variant={variant} size={size} icon={icon} text={text} textProps={textProps} />
+                <ButtonContent
+                    variant={variant}
+                    size={size}
+                    icon={icon}
+                    iconProps={iconProps}
+                    text={text}
+                    textProps={textProps}
+                />
             </Link>
         )
     },

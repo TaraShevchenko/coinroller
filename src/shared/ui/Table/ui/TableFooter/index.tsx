@@ -1,8 +1,8 @@
-import * as React from 'react'
+import { type HTMLAttributes, forwardRef } from 'react'
 
 import { cn } from 'shared/utils/cn'
 
-export const TableFooter = React.forwardRef<HTMLTableSectionElement, React.HTMLAttributes<HTMLTableSectionElement>>(
+export const TableFooter = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>(
     ({ className, ...props }, ref) => (
         <tfoot
             ref={ref}

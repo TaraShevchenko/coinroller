@@ -1,7 +1,7 @@
-import * as React from 'react'
+import { type TdHTMLAttributes, forwardRef } from 'react'
 
 import { Skeleton } from 'shared/ui/Skeleton'
-import { Text, TextProps } from 'shared/ui/Text'
+import { Text, type TextProps } from 'shared/ui/Text'
 import { cn } from 'shared/utils/cn'
 
 type TableCell = {
@@ -10,9 +10,9 @@ type TableCell = {
     subText?: string
     subTextProps?: Omit<TextProps, 'text'>
     isLoading?: boolean
-} & Omit<React.TdHTMLAttributes<HTMLTableCellElement>, 'children'>
+} & Omit<TdHTMLAttributes<HTMLTableCellElement>, 'children'>
 
-export const TableCell = React.forwardRef<HTMLTableCellElement, TableCell>(
+export const TableCell = forwardRef<HTMLTableCellElement, TableCell>(
     ({ className, text, textProps, subText, subTextProps, isLoading, ...props }, ref) => (
         <td
             ref={ref}

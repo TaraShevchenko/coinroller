@@ -1,9 +1,9 @@
-import React, { type FC } from 'react'
+import { type FC } from 'react'
 
 import { LangSelector } from 'features/LangSelector'
 import { ThemeSelector } from 'features/ThemeSelector'
 
-import { type Child } from 'shared/types/types'
+import { type Children } from 'shared/types/types'
 import { Card, CardDescription, CardHeader, CardTitle } from 'shared/ui/Card'
 import { Logo } from 'shared/ui/Icons'
 import { Text } from 'shared/ui/Text'
@@ -12,7 +12,7 @@ import { cn } from 'shared/utils/cn'
 type AuthCardProps = {
     title: string
     subtitle: string
-} & Child
+} & Children
 
 export const AuthCard: FC<AuthCardProps> = ({ title, subtitle, children }) => {
     return (

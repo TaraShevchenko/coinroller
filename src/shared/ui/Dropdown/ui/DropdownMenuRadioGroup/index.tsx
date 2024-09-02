@@ -1,17 +1,17 @@
 'use client'
 
-import * as React from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import * as RadixDropdownComponents from '@radix-ui/react-dropdown-menu'
 
 import { cn } from 'shared/utils/cn'
 
-export const DropdownMenuRadioGroup = React.forwardRef<
-    React.ElementRef<typeof DropdownMenuPrimitive.RadioGroup>,
-    React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioGroup>
+export const DropdownMenuRadioGroup = forwardRef<
+    ElementRef<typeof RadixDropdownComponents.RadioGroup>,
+    ComponentPropsWithoutRef<typeof RadixDropdownComponents.RadioGroup>
 >(({ className, children, ...props }, ref) => (
-    <DropdownMenuPrimitive.RadioGroup ref={ref} className={cn('px-1', className)} {...props}>
+    <RadixDropdownComponents.RadioGroup ref={ref} className={cn('px-1', className)} {...props}>
         {children}
-    </DropdownMenuPrimitive.RadioGroup>
+    </RadixDropdownComponents.RadioGroup>
 ))
-DropdownMenuRadioGroup.displayName = DropdownMenuPrimitive.RadioGroup.displayName
+DropdownMenuRadioGroup.displayName = RadixDropdownComponents.RadioGroup.displayName

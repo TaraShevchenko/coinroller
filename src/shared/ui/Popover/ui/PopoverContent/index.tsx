@@ -1,5 +1,4 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
-import * as React from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 

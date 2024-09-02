@@ -31,7 +31,6 @@ export const useAccountsTableStore = create<AccountsTableState>()(
                         tableSkeleton: false,
                         tableLoader: false,
                         filters: false,
-                        pagination: false,
                     }
                 })
             },
